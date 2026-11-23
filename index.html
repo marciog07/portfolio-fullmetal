@@ -1,7 +1,7 @@
 <div id="fm-site">
 <style>
 html,body{margin:0;padding:0;min-height:100%;background:#101012}
-#fm-site{--red:#9b2024;--deep:#571116;--ink:#101012;--panel:#211d1e;--gold:#e2c77f;--paper:#f5efdf;--muted:#c9bead;color:var(--paper);background:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif;min-height:100dvh;position:relative;overflow-x:hidden;overflow-y:auto;box-sizing:border-box}
+#fm-site{--red:#9b2024;--deep:#571116;--ink:#101012;--panel:#211d1e;--gold:#e2c77f;--silver:#c8cfd6;--paper:#f5efdf;--muted:#c9bead;color:var(--paper);background:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif;min-height:100dvh;position:relative;overflow-x:hidden;overflow-y:auto;box-sizing:border-box}
 #fm-site *{box-sizing:border-box}#fm-site a{color:inherit}#fm-site button,#fm-site summary{font:inherit}
 #fm-site .intro{min-height:100dvh;display:grid;place-items:center;position:relative;text-align:center;isolation:isolate;padding:42px 18px 34px;background:radial-gradient(ellipse at center,#641a1c 0,#231416 42%,#101012 78%)}
 #fm-site .intro:before,#fm-site .intro:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
@@ -20,34 +20,39 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .equivalent{margin:14px 0 0!important;color:var(--gold)!important;font-size:14px!important;font-style:italic}
 #fm-site .enter{display:inline-block;padding:12px 22px;background:linear-gradient(110deg,var(--deep),var(--red));border:1px solid var(--gold);color:var(--paper);text-decoration:none;letter-spacing:.08em;box-shadow:0 0 18px #a42b2855;transition:transform .2s,box-shadow .2s;cursor:pointer}
 #fm-site .enter:hover,#fm-site .enter:focus{transform:translateY(-2px);box-shadow:0 0 26px #d8ae61a0}
-#fm-site .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px clamp(14px,3vw,28px);background:#151314;border-bottom:1px solid #5a3434;position:sticky;top:0;z-index:5}
-#fm-site .brand{color:var(--gold);text-decoration:none;font-size:18px;cursor:pointer;background:none;border:0;padding:0;transition:opacity .2s}
-#fm-site .brand:hover{opacity:.85}
-#fm-site .nav-row{display:flex;flex-wrap:wrap;gap:8px;padding:10px clamp(14px,3vw,28px);background:#191516;border-bottom:1px solid #3a2627}
-#fm-site .nav-btn{background:#241a1b;border:1px solid #694042;color:var(--paper);padding:6px 11px;font-size:13px;cursor:pointer;transition:transform .18s,background .2s,border-color .2s,color .2s}
-#fm-site .nav-btn:hover,#fm-site .nav-btn.active{transform:translateY(-1px);background:var(--deep);border-color:var(--gold);color:var(--gold)}
-#fm-site .view{min-height:calc(100dvh - 122px);padding:clamp(18px,4vw,38px);animation:appear .35s ease-out}
-#fm-site .view-head{border-left:4px solid var(--red);padding:4px 0 4px 16px;margin:0 0 22px}
+#fm-site .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px clamp(14px,3vw,28px);background:linear-gradient(90deg,#151314,#251517 50%,#151314);border-bottom:1px solid #7d5b2d;position:sticky;top:0;z-index:5;box-shadow:0 4px 16px #0006}
+#fm-site .brand{display:inline-flex;align-items:center;gap:10px;color:var(--gold);text-decoration:none;font-size:18px;cursor:pointer;background:none;border:0;padding:0;transition:opacity .2s}
+#fm-site .brand:hover{opacity:.88}
+#fm-site .watch-badge{width:28px;height:28px;flex:none;filter:drop-shadow(0 0 6px #e2c77f55);animation:turn 28s linear infinite}
+#fm-site .top-ornament{width:110px;height:22px;opacity:.75;flex:none}
+#fm-site .nav-row{display:flex;flex-wrap:wrap;gap:8px;padding:10px clamp(14px,3vw,28px);background:#191516;border-bottom:1px solid #492c2d}
+#fm-site .nav-btn{background:linear-gradient(180deg,#281c1d,#1b1415);border:1px solid #694042;color:var(--paper);padding:6px 11px;font-size:13px;cursor:pointer;transition:transform .18s,background .2s,border-color .2s,color .2s,box-shadow .2s}
+#fm-site .nav-btn:hover,#fm-site .nav-btn.active{transform:translateY(-1px);background:linear-gradient(180deg,var(--red),var(--deep));border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px #e2c77f28}
+#fm-site .view{min-height:calc(100dvh - 122px);padding:clamp(18px,4vw,38px);background:radial-gradient(circle at 85% 15%,#641a1c28,transparent 45%),radial-gradient(circle at 12% 85%,#e2c77f0d,transparent 40%);animation:appear .35s ease-out}
+#fm-site .view-head{border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:0 0 22px;position:relative}
+#fm-site .view-head:before{content:"";position:absolute;left:-8px;top:50%;width:10px;height:10px;transform:translateY(-50%) rotate(45deg);background:var(--red);border:1px solid var(--gold)}
 #fm-site h2{font-size:clamp(27px,4vw,40px);line-height:1.15;color:var(--gold);margin:0 0 7px}
 #fm-site .subhead{color:var(--muted);margin:0}
 #fm-site .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-#fm-site .card{padding:17px;background:linear-gradient(145deg,#292123,#1b191a);border:1px solid #503233;border-top:2px solid var(--red);box-shadow:0 6px 18px #0004;min-width:0;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}
-#fm-site .card:hover{transform:translateY(-2px);border-color:#7d4949;box-shadow:0 10px 24px #0007}
-#fm-site .card:before{content:"✦";position:absolute;right:11px;top:7px;color:var(--gold);opacity:.45;font-size:12px}
-#fm-site .work:after{content:"⚙";position:absolute;right:10px;bottom:5px;color:var(--gold);opacity:.23;font-size:17px}
-#fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px}
+#fm-site .card{padding:17px;background:linear-gradient(145deg,#2a2022,#1a1718);border:1px solid #593536;border-top:2px solid var(--gold);box-shadow:0 6px 18px #0005,inset 0 0 0 1px #9b20242b;min-width:0;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}
+#fm-site .card:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 10px 24px #0008,0 0 16px #e2c77f1c}
+#fm-site .card-sigil{position:absolute;right:10px;top:9px;width:24px;height:24px;opacity:.35;pointer-events:none;transition:transform .35s ease,opacity .25s ease}
+#fm-site .card:hover .card-sigil{transform:rotate(90deg);opacity:.7}
+#fm-site .work:after{content:"⚙";position:absolute;right:10px;bottom:5px;color:var(--gold);opacity:.26;font-size:18px;transition:transform .4s ease,opacity .25s ease}
+#fm-site .work:hover:after{transform:rotate(60deg);opacity:.55}
+#fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px;padding-right:28px}
 #fm-site .card p{margin:0;color:#eee6d8}
-#fm-site .work-img{width:100%;max-height:220px;object-fit:cover;margin-top:12px;border:1px solid #694042;border-radius:4px;display:block}
+#fm-site .work-img{width:100%;max-height:220px;object-fit:cover;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;box-shadow:0 4px 12px #0006}
 #fm-site .unit-link{display:flex;width:100%;text-align:left;align-items:center;justify-content:space-between;min-height:92px;transition:transform .18s,border-color .18s,box-shadow .18s;cursor:pointer}
-#fm-site .unit-link:hover,#fm-site .unit-link:focus{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 22px #c79e3c22}
+#fm-site .unit-link:hover,#fm-site .unit-link:focus{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 22px #c79e3c2a}
 #fm-site .unit-link span:last-child{color:var(--gold);font-size:24px;transition:transform .2s}
 #fm-site .unit-link:hover span:last-child{transform:translateX(3px)}
 #fm-site .crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:14px;margin:0 0 16px}
 #fm-site .crumb button{background:none;border:0;padding:0;color:var(--gold);cursor:pointer;text-decoration:underline}
-#fm-site .back{display:inline-block;margin-top:20px;padding:8px 12px;border:1px solid #694042;background:#241a1b;color:var(--paper);cursor:pointer;transition:transform .18s,border-color .18s,background .18s}
+#fm-site .back{display:inline-block;margin-top:20px;padding:8px 12px;border:1px solid #7d5b2d;background:linear-gradient(180deg,#291c1d,#1a1415);color:var(--paper);cursor:pointer;transition:transform .18s,border-color .18s,background .18s}
 #fm-site .back:hover,#fm-site .back:focus{transform:translateY(-1px);border-color:var(--gold);background:var(--deep)}
-#fm-site .quote{margin-top:14px;padding:15px 18px;background:linear-gradient(100deg,var(--deep),#301719);border-left:3px solid var(--gold);font-size:18px;animation:appear .4s ease-out}
-#fm-site .foot{text-align:center;padding:13px;color:var(--muted);border-top:1px solid #493536;font-size:13px}
+#fm-site .quote{margin-top:14px;padding:15px 18px;background:linear-gradient(100deg,var(--deep),#301719);border-left:3px solid var(--gold);border-right:1px solid #7d5b2d55;font-size:18px;box-shadow:0 6px 18px #0004;animation:appear .4s ease-out}
+#fm-site .foot{text-align:center;padding:13px;color:var(--muted);border-top:1px solid #5c3e26;background:linear-gradient(90deg,#121011,#221416 50%,#121011);font-size:13px}
 #fm-site .page-flash{position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(circle,#f6d98155,transparent 60%);animation:flash .35s ease-out forwards}
 @keyframes turn{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes turnBack{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
@@ -55,7 +60,9 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 @keyframes embers{0%{opacity:.25;transform:translateY(0)}to{opacity:.5;transform:translateY(-6px)}}
 @keyframes shine{0%,100%{opacity:0;transform:translateX(-18%)}45%{opacity:1}70%{opacity:0;transform:translateX(18%)}}
 @keyframes flash{from{opacity:.75}to{opacity:0}}
-@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:flex-start}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}}
+#fm-site .watch-badge{animation:spinWatch 28s linear infinite}
+@keyframes spinWatch{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}}
 @media(prefers-reduced-motion:reduce){#fm-site *,#fm-site *:before,#fm-site *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 
@@ -89,6 +96,12 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 
   var sealHtml = '<svg class="seal" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="137" fill="none" stroke="#e2c77f" stroke-width="2"/><circle cx="150" cy="150" r="118" fill="none" stroke="#e2c77f"/><circle cx="150" cy="150" r="92" fill="none" stroke="#e2c77f"/><polygon points="150,34 250,208 50,208" fill="none" stroke="#e2c77f" stroke-width="2"/><polygon points="150,266 50,92 250,92" fill="none" stroke="#e2c77f" stroke-width="2"/><g class="inner" fill="none" stroke="#e2c77f"><circle cx="150" cy="150" r="54"/><path d="M150 96v108M96 150h108M112 112l76 76M188 112l-76 76M150 36v18M150 246v18M36 150h18M246 150h18"/><path d="M136 136l14-28 14 28-14 28z"/><path d="M150 22l5 10-5 10-5-10zM278 150l-10 5-10-5 10-5zM150 278l-5-10 5-10 5 10zM22 150l10-5 10 5-10 5z"/></g><circle cx="150" cy="150" r="74" fill="none" stroke="#e2c77f" stroke-dasharray="2 7"/></svg>';
 
+  var watchBadgeHtml = '<svg class="watch-badge" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="19" r="13" fill="none" stroke="#e2c77f" stroke-width="1.6"/><circle cx="18" cy="19" r="10" fill="none" stroke="#c8cfd6" stroke-width=".9" stroke-dasharray="2 2"/><path d="M15 4h6M18 4v2M18 19l5-4M18 19v-7" stroke="#e2c77f" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="19" r="1.5" fill="#e2c77f"/></svg>';
+
+  var topOrnamentHtml = '<svg class="top-ornament" viewBox="0 0 110 22" aria-hidden="true"><line x1="2" y1="11" x2="42" y2="11" stroke="#e2c77f" stroke-opacity=".55"/><polygon points="55,4 62,11 55,18 48,11" fill="none" stroke="#e2c77f" stroke-width="1.2"/><circle cx="55" cy="11" r="2" fill="#9b2024"/><line x1="68" y1="11" x2="108" y2="11" stroke="#e2c77f" stroke-opacity=".55"/></svg>';
+
+  var cardSigilHtml = '<svg class="card-sigil" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#e2c77f" stroke-width="1.2"/><polygon points="16,4 26,22 6,22" fill="none" stroke="#e2c77f" stroke-width="1.1"/><polygon points="16,28 6,10 26,10" fill="none" stroke="#e2c77f" stroke-width="1.1"/></svg>';
+
   // Para adicionar foto em um trabalho, coloque o caminho da imagem na pasta img/ como 3º item:
   // ["Título do trabalho", "Descrição do aprendizado", "img/nome-da-foto.jpg"]
   var subjects = [
@@ -119,7 +132,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
     {id:"projeto",name:"Projeto de Vida",units:[
       {name:"1ª Unidade",works:[["Mapa dos sonhos","Participei da construção de um mapa mental sobre sonhos e objetivos para o futuro. O trabalho permitiu refletir sobre minhas metas pessoais e profissionais, além de incentivar o planejamento para alcançá-las."],["Juventude em cada estação","Relacionamos as diferentes fases da juventude às estações do ano, explorando características, desafios e experiências de cada momento. O trabalho contribuiu para a reflexão sobre o desenvolvimento dos jovens e suas vivências ao longo da vida."]]},
       {name:"2ª Unidade",works:[["Conceito de autocontrole","Estudei o conceito de autocontrole e sua importância para a tomada de decisões. O conteúdo contribuiu para meu desenvolvimento pessoal e para uma melhor compreensão das próprias atitudes e emoções."],["Bate-papo: legado","Neste bate-papo, participei de uma conversa sobre o conceito de legado e a importância das ações que deixamos para outras pessoas. A atividade incentivou a reflexão sobre valores, escolhas e responsabilidade no dia a dia."]]},
-      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."]]},
+      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]},
     {id:"senai",name:"SENAI · Automação Industrial",units:[
@@ -148,7 +161,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   }
 
   function renderNav() {
-    var html = '<div class="topbar">' + btn("inicio", "brand", "⚗ Portfólio Fullmetal") + '</div>';
+    var html = '<div class="topbar">' + btn("inicio", "brand", watchBadgeHtml + '<span>Portfólio Fullmetal</span>') + topOrnamentHtml + '</div>';
     html += '<div class="nav-row">';
     html += btn("sobre", "nav-btn" + (route === "sobre" ? " active" : ""), "Sobre mim");
     for (var i = 0; i < subjects.length; i++) {
@@ -161,13 +174,13 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   }
 
   function renderAbout() {
-    return '<main class="view"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card"><h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p></article><article class="card"><h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card"><h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p></article><article class="card"><h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px"><h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
+    return '<main class="view"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card">' + cardSigilHtml + '<h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p></article><article class="card">' + cardSigilHtml + '<h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card">' + cardSigilHtml + '<h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p></article><article class="card">' + cardSigilHtml + '<h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px">' + cardSigilHtml + '<h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
   }
 
   function renderSubject(s) {
     var cards = "";
     for (var i = 0; i < s.units.length; i++) {
-      cards += btn(s.id + "-" + (i + 1), "card unit-link", '<span><h3>' + s.units[i].name + '</h3><span class="subhead">Ver atividades desta unidade</span></span><span>›</span>');
+      cards += btn(s.id + "-" + (i + 1), "card unit-link", cardSigilHtml + '<span><h3>' + s.units[i].name + '</h3><span class="subhead">Ver atividades desta unidade</span></span><span>›</span>');
     }
     return '<main class="view"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + s.name + '</div><div class="view-head"><div class="eyebrow">Área de estudo</div><h2>' + s.name + '</h2><p class="subhead">Escolha a unidade para ver os trabalhos e aprendizados.</p></div><div class="cards">' + cards + '</div>' + btn("inicio", "back", "Voltar ao início") + '</main>';
   }
@@ -180,7 +193,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
       var imgHtml = imgPath
         ? '<img src="' + imgPath + '" alt="' + u.works[i][0] + '" class="work-img" loading="lazy">'
         : '';
-      cards += '<article class="card work"><h3>' + u.works[i][0] + '</h3><p>' + u.works[i][1] + '</p>' + imgHtml + '</article>';
+      cards += '<article class="card work">' + cardSigilHtml + '<h3>' + u.works[i][0] + '</h3><p>' + u.works[i][1] + '</p>' + imgHtml + '</article>';
     }
     return '<main class="view"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + btn(s.id, "", s.name) + ' / ' + u.name + '</div><div class="view-head"><div class="eyebrow">' + s.name + '</div><h2>' + u.name + '</h2><p class="subhead">Trabalhos e aprendizados</p></div><div class="cards">' + cards + '</div>' + btn(s.id, "back", "← Voltar para " + s.name) + '</main>';
   }
