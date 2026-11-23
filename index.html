@@ -11,7 +11,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .seal .inner{transform-origin:150px 150px;animation:turnBack 32s linear infinite}
 #fm-site .intro-copy{max-width:760px;position:relative}
 #fm-site .eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font:12px/1.4 Arial,sans-serif}
-#fm-site .intro h1{font-size:clamp(34px,7.5vw,68px);line-height:1.06;margin:12px 0;color:var(--paper);text-shadow:0 0 24px #a42b28a8}
+#fm-site .intro h1{font-size:clamp(34px,7.5vw,68px);line-height:1.06;margin:0 0 28px;color:var(--paper);text-shadow:0 0 24px #a42b28a8;letter-spacing:.06em}
 #fm-site .intro p{color:var(--muted);font-size:clamp(16px,2.4vw,20px);margin:0 auto 24px}
 #fm-site .rank{display:flex;align-items:center;justify-content:center;gap:11px;margin:0 auto 20px;padding:9px 15px;width:max-content;max-width:100%;border:1px solid #a98d50;background:#171415bb;color:var(--gold);text-align:left;box-shadow:0 0 18px #c79e3c22}
 #fm-site .rank svg{width:38px;height:38px;flex:none;filter:drop-shadow(0 0 5px #e2c77f66)}
@@ -61,41 +61,9 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 
 <div id="fm-app">
   <main class="intro">
-    <svg class="seal" viewBox="0 0 300 300" aria-hidden="true">
-      <circle cx="150" cy="150" r="137" fill="none" stroke="#e2c77f" stroke-width="2"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="#e2c77f"/>
-      <circle cx="150" cy="150" r="92" fill="none" stroke="#e2c77f"/>
-      <polygon points="150,34 250,208 50,208" fill="none" stroke="#e2c77f" stroke-width="2"/>
-      <polygon points="150,266 50,92 250,92" fill="none" stroke="#e2c77f" stroke-width="2"/>
-      <g class="inner" fill="none" stroke="#e2c77f">
-        <circle cx="150" cy="150" r="54"/>
-        <path d="M150 96v108M96 150h108M112 112l76 76M188 112l-76 76M150 36v18M150 246v18M36 150h18M246 150h18"/>
-        <path d="M136 136l14-28 14 28-14 28z"/>
-        <path d="M150 22l5 10-5 10-5-10zM278 150l-10 5-10-5 10-5zM150 278l-5-10 5-10 5 10zM22 150l10-5 10 5-10 5z"/>
-      </g>
-      <circle cx="150" cy="150" r="74" fill="none" stroke="#e2c77f" stroke-dasharray="2 7"/>
-    </svg>
     <div class="intro-copy">
-      <div class="eyebrow">Uma jornada de aprendizado</div>
-      <h1>Portfólio<br>Fullmetal</h1>
-      <p>Conheça um pouco da minha história, dos trabalhos e aprendizados ao longo do ano.</p>
-      <div class="rank">
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <circle cx="24" cy="24" r="20" fill="none" stroke="#e2c77f" stroke-width="1.5"/>
-          <circle cx="24" cy="24" r="16" fill="none" stroke="#e2c77f"/>
-          <path d="M24 13v12l8 5M24 4v4M24 40v4M4 24h4M40 24h4" fill="none" stroke="#e2c77f" stroke-width="2"/>
-          <path d="M19 4h10M24 44v3" stroke="#e2c77f" stroke-width="2"/>
-        </svg>
-        <svg class="ouro" viewBox="0 0 48 48" aria-hidden="true">
-          <path d="M35 10A18 18 0 1 0 40 24" fill="none" stroke="#e2c77f" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M32 6l10 1-2 10-8-4z" fill="#e2c77f"/>
-          <circle cx="37" cy="10" r="1" fill="#571116"/>
-          <path d="M11 16l4 2M8 23l4 1M10 31l4-1M17 38l3-3M27 41l1-4" stroke="#e2c77f" stroke-width="1.5"/>
-        </svg>
-        <span><b>Alquimista Federal</b><small>Relógio de prata · Ouroboros</small></span>
-      </div>
+      <h1>PORTFÓLIO</h1>
       <button type="button" class="enter" data-r="sobre">ENTRAR NO PORTFÓLIO →</button>
-      <p class="equivalent">“Troca equivalente”: todo avanço exige dedicação.</p>
     </div>
   </main>
 </div>
@@ -105,12 +73,6 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   var app = document.getElementById("fm-app");
   if (!app) return;
 
-  var sealHtml = '<svg class="seal" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="137" fill="none" stroke="#e2c77f" stroke-width="2"/><circle cx="150" cy="150" r="118" fill="none" stroke="#e2c77f"/><circle cx="150" cy="150" r="92" fill="none" stroke="#e2c77f"/><polygon points="150,34 250,208 50,208" fill="none" stroke="#e2c77f" stroke-width="2"/><polygon points="150,266 50,92 250,92" fill="none" stroke="#e2c77f" stroke-width="2"/><g class="inner" fill="none" stroke="#e2c77f"><circle cx="150" cy="150" r="54"/><path d="M150 96v108M96 150h108M112 112l76 76M188 112l-76 76M150 36v18M150 246v18M36 150h18M246 150h18"/><path d="M136 136l14-28 14 28-14 28z"/><path d="M150 22l5 10-5 10-5-10zM278 150l-10 5-10-5 10-5zM150 278l-5-10 5-10 5 10zM22 150l10-5 10 5-10 5z"/></g><circle cx="150" cy="150" r="74" fill="none" stroke="#e2c77f" stroke-dasharray="2 7"/></svg>';
-
-  var rankHtml = '<div class="rank"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#e2c77f" stroke-width="1.5"/><circle cx="24" cy="24" r="16" fill="none" stroke="#e2c77f"/><path d="M24 13v12l8 5M24 4v4M24 40v4M4 24h4M40 24h4" fill="none" stroke="#e2c77f" stroke-width="2"/><path d="M19 4h10M24 44v3" stroke="#e2c77f" stroke-width="2"/></svg><svg class="ouro" viewBox="0 0 48 48" aria-hidden="true"><path d="M35 10A18 18 0 1 0 40 24" fill="none" stroke="#e2c77f" stroke-width="2.2" stroke-linecap="round"/><path d="M32 6l10 1-2 10-8-4z" fill="#e2c77f"/><circle cx="37" cy="10" r="1" fill="#571116"/><path d="M11 16l4 2M8 23l4 1M10 31l4-1M17 38l3-3M27 41l1-4" stroke="#e2c77f" stroke-width="1.5"/></svg><span><b>Alquimista Federal</b><small>Relógio de prata · Ouroboros</small></span></div>';
-
-  // Para adicionar foto em um trabalho, coloque o caminho da imagem na pasta img/ como 3º item:
-  // ["Título do trabalho", "Descrição do aprendizado", "img/nome-da-foto.jpg"]
   var subjects = [
     {id:"linguagens",name:"Linguagens",units:[
       {name:"1ª Unidade",works:[["Conceito de Will","Esse trabalho me ensinou a ter mais precisão comunicativa. Entender o will me fez perceber como pequenos auxiliares mudam completamente a intenção do que dizemos, permitindo que eu me expresse em inglês com mais naturalidade e clareza."],["Lazer Ativo","Nesse trabalho, fizemos um circuito de bicicleta. Aprendi que o lazer ativo é uma ferramenta poderosa para cuidar do corpo e da mente e interagir com o mundo ao redor de forma mais saudável e consciente."]]},
@@ -145,7 +107,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
     {id:"senai",name:"SENAI · Automação Industrial",units:[
       {name:"1ª Unidade",works:[["Circuito Elétrico","Nesta atividade, fiz um circuito elétrico no computador, o que me ajudou a aprender na teoria como os circuitos elétricos funcionam."],["Atividade no Laboratório","Nesta atividade prática, aprendemos a usar multímetro, protoboard e fonte de alimentação para ligar um LED no circuito."]]},
       {name:"2ª Unidade",works:[["Thinker Cad","Nessa aula, aprendi a modelar em três dimensões, combinando e modificando formas geométricas para construir objetos complexos e entender conceitos de escala e proporção."],["Desenho Técnico","Nessa atividade, desenvolvi a capacidade de mentalizar um objeto em 3D e representá-lo em uma tela 2D através das vistas ortográficas (frontal, superior e lateral), cortes e seções."]]},
-      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."]]},
+      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]}
   ];
@@ -164,7 +126,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   }
 
   function renderIntro() {
-    return '<main class="intro">' + sealHtml + '<div class="intro-copy"><div class="eyebrow">Uma jornada de aprendizado</div><h1>Portfólio<br>Fullmetal</h1><p>Conheça um pouco da minha história, dos trabalhos e aprendizados ao longo do ano.</p>' + rankHtml + '<button type="button" class="enter" data-r="sobre">ENTRAR NO PORTFÓLIO →</button><p class="equivalent">“Troca equivalente”: todo avanço exige dedicação.</p></div></main><div class="page-flash"></div>';
+    return '<main class="intro"><div class="intro-copy"><h1>PORTFÓLIO</h1><button type="button" class="enter" data-r="sobre">ENTRAR NO PORTFÓLIO →</button></div></main><div class="page-flash"></div>';
   }
 
   function renderNav() {
