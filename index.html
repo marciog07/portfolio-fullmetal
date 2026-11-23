@@ -1,0 +1,223 @@
+<div id="fm-site">
+<style>
+#fm-site{--red:#9b2024;--deep:#571116;--ink:#101012;--panel:#211d1e;--gold:#e2c77f;--paper:#f5efdf;--muted:#c9bead;color:var(--paper);background:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif;min-height:640px;position:relative;overflow-x:hidden;overflow-y:auto;box-sizing:border-box}
+#fm-site *{box-sizing:border-box}#fm-site a{color:inherit}#fm-site button,#fm-site summary{font:inherit}
+#fm-site .intro{min-height:640px;display:grid;place-items:center;position:relative;text-align:center;isolation:isolate;padding:42px 18px 34px;background:radial-gradient(ellipse at center,#641a1c 0,#231416 42%,#101012 78%)}
+#fm-site .intro:before,#fm-site .intro:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
+#fm-site .intro:before{background:radial-gradient(circle at 16% 28%,#e2c77f99 0 1px,transparent 2px),radial-gradient(circle at 78% 20%,#e2c77f88 0 1px,transparent 2px),radial-gradient(circle at 82% 72%,#d9473288 0 2px,transparent 3px),radial-gradient(circle at 24% 78%,#e2c77f77 0 1px,transparent 2px);animation:embers 4s ease-in-out infinite alternate}
+#fm-site .intro:after{background:linear-gradient(115deg,transparent 35%,#f6dfaa14 50%,transparent 64%);animation:shine 6s ease-in-out infinite}
+#fm-site .seal{width:min(67vw,370px);height:auto;position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);opacity:.22;z-index:-1;filter:drop-shadow(0 0 10px #d7aa4b);animation:turn 48s linear infinite}
+#fm-site .seal .inner{transform-origin:150px 150px;animation:turnBack 32s linear infinite}
+#fm-site .intro-copy{max-width:760px;position:relative}
+#fm-site .eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font:12px/1.4 Arial,sans-serif}
+#fm-site .intro h1{font-size:clamp(34px,7.5vw,68px);line-height:1.06;margin:12px 0;color:var(--paper);text-shadow:0 0 24px #a42b28a8}
+#fm-site .intro p{color:var(--muted);font-size:clamp(16px,2.4vw,20px);margin:0 auto 24px}
+#fm-site .rank{display:flex;align-items:center;justify-content:center;gap:11px;margin:0 auto 20px;padding:9px 15px;width:max-content;max-width:100%;border:1px solid #a98d50;background:#171415bb;color:var(--gold);text-align:left;box-shadow:0 0 18px #c79e3c22}
+#fm-site .rank svg{width:38px;height:38px;flex:none;filter:drop-shadow(0 0 5px #e2c77f66)}
+#fm-site .rank svg.ouro{width:34px;height:34px}
+#fm-site .rank b,#fm-site .rank small{display:block}#fm-site .rank b{font:12px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}#fm-site .rank small{color:var(--muted);font-size:12px}
+#fm-site .equivalent{margin:14px 0 0!important;color:var(--gold)!important;font-size:14px!important;font-style:italic}
+#fm-site .enter{display:inline-block;padding:12px 22px;background:linear-gradient(110deg,var(--deep),var(--red));border:1px solid var(--gold);color:var(--paper);text-decoration:none;letter-spacing:.08em;box-shadow:0 0 18px #a42b2855;transition:transform .2s,box-shadow .2s;cursor:pointer}
+#fm-site .enter:hover,#fm-site .enter:focus{transform:translateY(-2px);box-shadow:0 0 26px #d8ae61a0}
+#fm-site .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px clamp(14px,3vw,28px);background:#151314;border-bottom:1px solid #5a3434;position:sticky;top:0;z-index:5}
+#fm-site .brand{color:var(--gold);text-decoration:none;font-size:18px;cursor:pointer;background:none;border:0;padding:0;transition:opacity .2s}
+#fm-site .brand:hover{opacity:.85}
+#fm-site .nav-row{display:flex;flex-wrap:wrap;gap:8px;padding:10px clamp(14px,3vw,28px);background:#191516;border-bottom:1px solid #3a2627}
+#fm-site .nav-btn{background:#241a1b;border:1px solid #694042;color:var(--paper);padding:6px 11px;font-size:13px;cursor:pointer;transition:transform .18s,background .2s,border-color .2s,color .2s}
+#fm-site .nav-btn:hover,#fm-site .nav-btn.active{transform:translateY(-1px);background:var(--deep);border-color:var(--gold);color:var(--gold)}
+#fm-site .view{min-height:510px;padding:clamp(18px,4vw,38px);animation:appear .35s ease-out}
+#fm-site .view-head{border-left:4px solid var(--red);padding:4px 0 4px 16px;margin:0 0 22px}
+#fm-site h2{font-size:clamp(27px,4vw,40px);line-height:1.15;color:var(--gold);margin:0 0 7px}
+#fm-site .subhead{color:var(--muted);margin:0}
+#fm-site .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#fm-site .card{padding:17px;background:linear-gradient(145deg,#292123,#1b191a);border:1px solid #503233;border-top:2px solid var(--red);box-shadow:0 6px 18px #0004;min-width:0;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}
+#fm-site .card:hover{transform:translateY(-2px);border-color:#7d4949;box-shadow:0 10px 24px #0007}
+#fm-site .card:before{content:"✦";position:absolute;right:11px;top:7px;color:var(--gold);opacity:.45;font-size:12px}
+#fm-site .work:after{content:"⚙";position:absolute;right:10px;bottom:5px;color:var(--gold);opacity:.23;font-size:17px}
+#fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px}
+#fm-site .card p{margin:0;color:#eee6d8}
+#fm-site .unit-link{display:flex;width:100%;text-align:left;align-items:center;justify-content:space-between;min-height:92px;transition:transform .18s,border-color .18s,box-shadow .18s;cursor:pointer}
+#fm-site .unit-link:hover,#fm-site .unit-link:focus{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 22px #c79e3c22}
+#fm-site .unit-link span:last-child{color:var(--gold);font-size:24px;transition:transform .2s}
+#fm-site .unit-link:hover span:last-child{transform:translateX(3px)}
+#fm-site .crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:14px;margin:0 0 16px}
+#fm-site .crumb button{background:none;border:0;padding:0;color:var(--gold);cursor:pointer;text-decoration:underline}
+#fm-site .back{display:inline-block;margin-top:20px;padding:8px 12px;border:1px solid #694042;background:#241a1b;color:var(--paper);cursor:pointer;transition:transform .18s,border-color .18s,background .18s}
+#fm-site .back:hover,#fm-site .back:focus{transform:translateY(-1px);border-color:var(--gold);background:var(--deep)}
+#fm-site .quote{margin-top:14px;padding:15px 18px;background:linear-gradient(100deg,var(--deep),#301719);border-left:3px solid var(--gold);font-size:18px;animation:appear .4s ease-out}
+#fm-site .foot{text-align:center;padding:13px;color:var(--muted);border-top:1px solid #493536;font-size:13px}
+#fm-site .page-flash{position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(circle,#f6d98155,transparent 60%);animation:flash .35s ease-out forwards}
+@keyframes turn{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes turnBack{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes embers{0%{opacity:.25;transform:translateY(0)}to{opacity:.5;transform:translateY(-6px)}}
+@keyframes shine{0%,100%{opacity:0;transform:translateX(-18%)}45%{opacity:1}70%{opacity:0;transform:translateX(18%)}}
+@keyframes flash{from{opacity:.75}to{opacity:0}}
+@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:flex-start}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:560px}}
+@media(prefers-reduced-motion:reduce){#fm-site *,#fm-site *:before,#fm-site *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div id="fm-app">
+  <main class="intro">
+    <svg class="seal" viewBox="0 0 300 300" aria-hidden="true">
+      <circle cx="150" cy="150" r="137" fill="none" stroke="#e2c77f" stroke-width="2"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="#e2c77f"/>
+      <circle cx="150" cy="150" r="92" fill="none" stroke="#e2c77f"/>
+      <polygon points="150,34 250,208 50,208" fill="none" stroke="#e2c77f" stroke-width="2"/>
+      <polygon points="150,266 50,92 250,92" fill="none" stroke="#e2c77f" stroke-width="2"/>
+      <g class="inner" fill="none" stroke="#e2c77f">
+        <circle cx="150" cy="150" r="54"/>
+        <path d="M150 96v108M96 150h108M112 112l76 76M188 112l-76 76M150 36v18M150 246v18M36 150h18M246 150h18"/>
+        <path d="M136 136l14-28 14 28-14 28z"/>
+        <path d="M150 22l5 10-5 10-5-10zM278 150l-10 5-10-5 10-5zM150 278l-5-10 5-10 5 10zM22 150l10-5 10 5-10 5z"/>
+      </g>
+      <circle cx="150" cy="150" r="74" fill="none" stroke="#e2c77f" stroke-dasharray="2 7"/>
+    </svg>
+    <div class="intro-copy">
+      <div class="eyebrow">Uma jornada de aprendizado</div>
+      <h1>Portfólio<br>Fullmetal</h1>
+      <p>Conheça um pouco da minha história, dos trabalhos e aprendizados ao longo do ano.</p>
+      <div class="rank">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="#e2c77f" stroke-width="1.5"/>
+          <circle cx="24" cy="24" r="16" fill="none" stroke="#e2c77f"/>
+          <path d="M24 13v12l8 5M24 4v4M24 40v4M4 24h4M40 24h4" fill="none" stroke="#e2c77f" stroke-width="2"/>
+          <path d="M19 4h10M24 44v3" stroke="#e2c77f" stroke-width="2"/>
+        </svg>
+        <svg class="ouro" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M35 10A18 18 0 1 0 40 24" fill="none" stroke="#e2c77f" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M32 6l10 1-2 10-8-4z" fill="#e2c77f"/>
+          <circle cx="37" cy="10" r="1" fill="#571116"/>
+          <path d="M11 16l4 2M8 23l4 1M10 31l4-1M17 38l3-3M27 41l1-4" stroke="#e2c77f" stroke-width="1.5"/>
+        </svg>
+        <span><b>Alquimista Federal</b><small>Relógio de prata · Ouroboros</small></span>
+      </div>
+      <button type="button" class="enter" data-r="sobre">ENTRAR NO PORTFÓLIO →</button>
+      <p class="equivalent">“Troca equivalente”: todo avanço exige dedicação.</p>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  var app = document.getElementById("fm-app");
+  if (!app) return;
+
+  var sealHtml = '<svg class="seal" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="137" fill="none" stroke="#e2c77f" stroke-width="2"/><circle cx="150" cy="150" r="118" fill="none" stroke="#e2c77f"/><circle cx="150" cy="150" r="92" fill="none" stroke="#e2c77f"/><polygon points="150,34 250,208 50,208" fill="none" stroke="#e2c77f" stroke-width="2"/><polygon points="150,266 50,92 250,92" fill="none" stroke="#e2c77f" stroke-width="2"/><g class="inner" fill="none" stroke="#e2c77f"><circle cx="150" cy="150" r="54"/><path d="M150 96v108M96 150h108M112 112l76 76M188 112l-76 76M150 36v18M150 246v18M36 150h18M246 150h18"/><path d="M136 136l14-28 14 28-14 28z"/><path d="M150 22l5 10-5 10-5-10zM278 150l-10 5-10-5 10-5zM150 278l-5-10 5-10 5 10zM22 150l10-5 10 5-10 5z"/></g><circle cx="150" cy="150" r="74" fill="none" stroke="#e2c77f" stroke-dasharray="2 7"/></svg>';
+
+  var rankHtml = '<div class="rank"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#e2c77f" stroke-width="1.5"/><circle cx="24" cy="24" r="16" fill="none" stroke="#e2c77f"/><path d="M24 13v12l8 5M24 4v4M24 40v4M4 24h4M40 24h4" fill="none" stroke="#e2c77f" stroke-width="2"/><path d="M19 4h10M24 44v3" stroke="#e2c77f" stroke-width="2"/></svg><svg class="ouro" viewBox="0 0 48 48" aria-hidden="true"><path d="M35 10A18 18 0 1 0 40 24" fill="none" stroke="#e2c77f" stroke-width="2.2" stroke-linecap="round"/><path d="M32 6l10 1-2 10-8-4z" fill="#e2c77f"/><circle cx="37" cy="10" r="1" fill="#571116"/><path d="M11 16l4 2M8 23l4 1M10 31l4-1M17 38l3-3M27 41l1-4" stroke="#e2c77f" stroke-width="1.5"/></svg><span><b>Alquimista Federal</b><small>Relógio de prata · Ouroboros</small></span></div>';
+
+  var subjects = [
+    {id:"linguagens",name:"Linguagens",units:[
+      {name:"1ª Unidade",works:[["Conceito de Will","Esse trabalho me ensinou a ter mais precisão comunicativa. Entender o will me fez perceber como pequenos auxiliares mudam completamente a intenção do que dizemos, permitindo que eu me expresse em inglês com mais naturalidade e clareza."],["Lazer Ativo","Nesse trabalho, fizemos um circuito de bicicleta. Aprendi que o lazer ativo é uma ferramenta poderosa para cuidar do corpo e da mente e interagir com o mundo ao redor de forma mais saudável e consciente."]]},
+      {name:"2ª Unidade",works:[["Resumo das páginas sobre Práticas Corporais","Produzi um resumo sobre práticas corporais, destacando sua importância para a expressão, o autoconhecimento e a convivência social. A atividade ampliou minha compreensão sobre o papel do corpo na comunicação e na cultura."],["Análise sintática","Resolvi exercícios de gramática e análise sintática, identificando funções gramaticais e classificando orações. A atividade contribuiu para ampliar meu conhecimento da língua portuguesa e demonstrar meu desenvolvimento nessa área."]]}
+    ]},
+    {id:"matematica",name:"Matemática",units:[
+      {name:"1ª Unidade",works:[["Anotações: logaritmos","Fiz anotações da primeira aula sobre logaritmos e resolvi exercícios relacionados ao conteúdo. Isso me ajudou a compreender os conceitos básicos e as propriedades dos logaritmos, servindo como base para os estudos posteriores do tema."],["Logaritmo no Kahoot","Participei de um Kahoot sobre funções logarítmicas e exponenciais, respondendo questões de forma dinâmica e interativa. A atividade ajudou a revisar os conteúdos estudados e a identificar pontos que eu precisava reforçar."]]},
+      {name:"2ª Unidade",works:[["Questões do livro","Resolvi exercícios do livro envolvendo juros simples e compostos, aplicando fórmulas e realizando cálculos financeiros. A atividade contribuiu para o desenvolvimento do raciocínio matemático e para a compreensão de situações do dia a dia."],["Titan PC","Participei da criação da empresa fictícia TitanPC para uma proposta inspirada em programas de investimento, como o Shark Tank. Embora não tenha havido apresentação, a atividade contribuiu para o trabalho em equipe, a organização das ideias e a produção dos slides."]]}
+    ]},
+    {id:"natureza",name:"Ciências da Natureza",units:[
+      {name:"1ª Unidade",works:[["Composição dos Alimentos","Neste trabalho, cada integrante escolheu um alimento para apresentar sua tabela nutricional. Aprendi que, mesmo sendo bom, um alimento pode ter malefícios."],["Transmissão Térmica","Neste mapa mental, coloquei os principais conceitos sobre transmissão térmica. Isso me ajudou nos estudos para o simulado e o PASSE."]]},
+      {name:"2ª Unidade",works:[["OBAFOG","Esse projeto foi muito importante, pois nele aprendemos vários assuntos, não só na teoria, mas principalmente na prática."],["Contração Muscular","Nesse trabalho sobre contração muscular, falei sobre a composição química dos músculos. Isso me ajudou a aprender com mais facilidade e também me ajudou no simulado."]]}
+    ]},
+    {id:"humanas",name:"Ciências Humanas",units:[
+      {name:"1ª Unidade",works:[["Modernismo","Elaborei um mapa mental sobre o Modernismo, organizando suas fases, características e principais autores. Essa atividade facilitou a revisão do conteúdo e me ajudou a visualizar melhor as informações estudadas."],["Constituição de 1824","Desenvolvemos um projeto sobre a Constituição de 1824, com pesquisa, apresentações e encenações. Nosso grupo apresentou o tema para outras turmas, o que ajudou a aprofundar o entendimento sobre esse período da história do Brasil e a desenvolver comunicação e trabalho em equipe."]]},
+      {name:"2ª Unidade",works:[["Miscigenação do Brasil","Neste trabalho, fizemos uma peça mostrando como funcionava o tráfico de escravizados para o Brasil. Foi um trabalho que nos mostrou o que os negros sofriam antigamente."],["Questões SSA/ENEM","Resolvemos questões de vestibulares, como ENEM e outros processos seletivos, com o auxílio do professor. Também discutimos por que cada alternativa estava correta ou incorreta, o que contribuiu para melhorar minha interpretação e preparação para esse tipo de prova."]]}
+    ]},
+    {id:"projeto",name:"Projeto de Vida",units:[
+      {name:"1ª Unidade",works:[["Mapa dos sonhos","Participei da construção de um mapa mental sobre sonhos e objetivos para o futuro. O trabalho permitiu refletir sobre minhas metas pessoais e profissionais, além de incentivar o planejamento para alcançá-las."],["Juventude em cada estação","Relacionamos as diferentes fases da juventude às estações do ano, explorando características, desafios e experiências de cada momento. O trabalho contribuiu para a reflexão sobre o desenvolvimento dos jovens e suas vivências ao longo da vida."]]},
+      {name:"2ª Unidade",works:[["Conceito de autocontrole","Estudei o conceito de autocontrole e sua importância para a tomada de decisões. O conteúdo contribuiu para meu desenvolvimento pessoal e para uma melhor compreensão das próprias atitudes e emoções."],["Bate-papo: legado","Neste bate-papo, participei de uma conversa sobre o conceito de legado e a importância das ações que deixamos para outras pessoas. A atividade incentivou a reflexão sobre valores, escolhas e responsabilidade no dia a dia."]]}
+    ]},
+    {id:"senai",name:"SENAI · Automação Industrial",units:[
+      {name:"1ª Unidade",works:[["Circuito Elétrico","Nesta atividade, fiz um circuito elétrico no computador, o que me ajudou a aprender na teoria como os circuitos elétricos funcionam."],["Atividade no Laboratório","Nesta atividade prática, aprendemos a usar multímetro, protoboard e fonte de alimentação para ligar um LED no circuito."]]},
+      {name:"2ª Unidade",works:[["Thinker Cad","Nessa aula, aprendi a modelar em três dimensões, combinando e modificando formas geométricas para construir objetos complexos e entender conceitos de escala e proporção."],["Desenho Técnico","Nessa atividade, desenvolvi a capacidade de mentalizar um objeto em 3D e representá-lo em uma tela 2D através das vistas ortográficas (frontal, superior e lateral), cortes e seções."]]}
+    ]}
+  ];
+
+  var route = "inicio";
+
+  function btn(r, cls, label) {
+    return '<button type="button" class="' + (cls || "") + '" data-r="' + r + '">' + label + '</button>';
+  }
+
+  function findSub(id) {
+    for (var i = 0; i < subjects.length; i++) {
+      if (id === subjects[i].id || id.indexOf(subjects[i].id + "-") === 0) return subjects[i];
+    }
+    return null;
+  }
+
+  function renderIntro() {
+    return '<main class="intro">' + sealHtml + '<div class="intro-copy"><div class="eyebrow">Uma jornada de aprendizado</div><h1>Portfólio<br>Fullmetal</h1><p>Conheça um pouco da minha história, dos trabalhos e aprendizados ao longo do ano.</p>' + rankHtml + '<button type="button" class="enter" data-r="sobre">ENTRAR NO PORTFÓLIO →</button><p class="equivalent">“Troca equivalente”: todo avanço exige dedicação.</p></div></main><div class="page-flash"></div>';
+  }
+
+  function renderNav() {
+    var html = '<div class="topbar">' + btn("inicio", "brand", "⚗ Portfólio Fullmetal") + '</div>';
+    html += '<div class="nav-row">';
+    html += btn("sobre", "nav-btn" + (route === "sobre" ? " active" : ""), "Sobre mim");
+    for (var i = 0; i < subjects.length; i++) {
+      var s = subjects[i];
+      var isAct = route === s.id || route.indexOf(s.id + "-") === 0;
+      html += btn(s.id, "nav-btn" + (isAct ? " active" : ""), s.name);
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderAbout() {
+    return '<main class="view"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card"><h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p></article><article class="card"><h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card"><h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p></article><article class="card"><h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px"><h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
+  }
+
+  function renderSubject(s) {
+    var cards = "";
+    for (var i = 0; i < s.units.length; i++) {
+      cards += btn(s.id + "-" + (i + 1), "card unit-link", '<span><h3>' + s.units[i].name + '</h3><span class="subhead">Ver atividades desta unidade</span></span><span>›</span>');
+    }
+    return '<main class="view"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + s.name + '</div><div class="view-head"><div class="eyebrow">Área de estudo</div><h2>' + s.name + '</h2><p class="subhead">Escolha a unidade para ver os trabalhos e aprendizados.</p></div><div class="cards">' + cards + '</div>' + btn("inicio", "back", "Voltar ao início") + '</main>';
+  }
+
+  function renderUnit(s, idx) {
+    var u = s.units[idx];
+    var cards = "";
+    for (var i = 0; i < u.works.length; i++) {
+      cards += '<article class="card work"><h3>' + u.works[i][0] + '</h3><p>' + u.works[i][1] + '</p></article>';
+    }
+    return '<main class="view"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + btn(s.id, "", s.name) + ' / ' + u.name + '</div><div class="view-head"><div class="eyebrow">' + s.name + '</div><h2>' + u.name + '</h2><p class="subhead">Trabalhos e aprendizados</p></div><div class="cards">' + cards + '</div>' + btn(s.id, "back", "← Voltar para " + s.name) + '</main>';
+  }
+
+  function render() {
+    if (route === "inicio") {
+      app.innerHTML = renderIntro();
+      return;
+    }
+    var body = "";
+    var s = findSub(route);
+    if (route === "sobre") {
+      body = renderAbout();
+    } else if (s && route === s.id) {
+      body = renderSubject(s);
+    } else if (s) {
+      var n = Number(route.slice(s.id.length + 1)) - 1;
+      body = (n >= 0 && n < s.units.length) ? renderUnit(s, n) : renderAbout();
+    } else {
+      body = renderAbout();
+    }
+    app.innerHTML = renderNav() + body + '<footer class="foot">Portfólio escolar · Márcio Gabriel</footer><div class="page-flash"></div>';
+  }
+
+  app.addEventListener("click", function(e) {
+    var target = e.target;
+    while (target && target !== app && !target.getAttribute("data-r")) {
+      target = target.parentNode;
+    }
+    if (target && target !== app) {
+      var next = target.getAttribute("data-r");
+      if (next) {
+        route = next;
+        render();
+      }
+    }
+  });
+})();
+</script>
+</div>
