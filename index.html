@@ -42,7 +42,9 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .work:hover:after{transform:rotate(60deg);opacity:.55}
 #fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px;padding-right:28px}
 #fm-site .card p{margin:0;color:#eee6d8}
-#fm-site .work-img{width:100%;max-height:220px;object-fit:cover;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;box-shadow:0 4px 12px #0006}
+#fm-site .card-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:12px}
+#fm-site .card-gallery img,#fm-site .work-img{width:100%;height:150px;object-fit:cover;border:1px solid #7d5b2d;border-radius:4px;display:block;box-shadow:0 4px 12px #0006}
+#fm-site .work-img{max-height:220px;height:auto;margin-top:12px}
 #fm-site .unit-link{display:flex;width:100%;text-align:left;align-items:center;justify-content:space-between;min-height:92px;transition:transform .18s,border-color .18s,box-shadow .18s;cursor:pointer}
 #fm-site .unit-link:hover,#fm-site .unit-link:focus{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 22px #c79e3c2a}
 #fm-site .unit-link span:last-child{color:var(--gold);font-size:24px;transition:transform .2s}
@@ -174,7 +176,17 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   }
 
   function renderAbout() {
-    return '<main class="view"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card">' + cardSigilHtml + '<h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p></article><article class="card">' + cardSigilHtml + '<h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card">' + cardSigilHtml + '<h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p></article><article class="card">' + cardSigilHtml + '<h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px">' + cardSigilHtml + '<h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
+    var quemSouImgs = '<div class="card-gallery">' +
+      '<img src="WhatsApp%20Image%202026-11-24%20at%2001.15.39.jpeg" alt="Foto de Quem sou" loading="lazy">' +
+      '</div>';
+
+    var conquistasImgs = '<div class="card-gallery">' +
+      '<img src="WhatsApp%20Image%202026-11-24%20at%2000.45.26%20%281%29.jpeg" alt="Conquista 1" loading="lazy">' +
+      '<img src="WhatsApp%20Image%202026-11-24%20at%2000.45.26%20%282%29.jpeg" alt="Conquista 2" loading="lazy">' +
+      '<img src="WhatsApp%20Image%202026-11-24%20at%2000.45.26.jpeg" alt="Conquista 3" loading="lazy">' +
+      '</div>';
+
+    return '<main class="view"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card">' + cardSigilHtml + '<h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p>' + quemSouImgs + '</article><article class="card">' + cardSigilHtml + '<h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card">' + cardSigilHtml + '<h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p>' + conquistasImgs + '</article><article class="card">' + cardSigilHtml + '<h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px">' + cardSigilHtml + '<h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
   }
 
   function renderSubject(s) {
