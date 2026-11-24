@@ -13,11 +13,6 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font:12px/1.4 Arial,sans-serif}
 #fm-site .intro h1{font-size:clamp(34px,7.5vw,68px);line-height:1.06;margin:0 0 28px;color:var(--paper);text-shadow:0 0 24px #a42b28a8;letter-spacing:.06em}
 #fm-site .intro p{color:var(--muted);font-size:clamp(16px,2.4vw,20px);margin:0 auto 24px}
-#fm-site .rank{display:flex;align-items:center;justify-content:center;gap:11px;margin:0 auto 20px;padding:9px 15px;width:max-content;max-width:100%;border:1px solid #a98d50;background:#171415bb;color:var(--gold);text-align:left;box-shadow:0 0 18px #c79e3c22}
-#fm-site .rank svg{width:38px;height:38px;flex:none;filter:drop-shadow(0 0 5px #e2c77f66)}
-#fm-site .rank svg.ouro{width:34px;height:34px}
-#fm-site .rank b,#fm-site .rank small{display:block}#fm-site .rank b{font:12px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}#fm-site .rank small{color:var(--muted);font-size:12px}
-#fm-site .equivalent{margin:14px 0 0!important;color:var(--gold)!important;font-size:14px!important;font-style:italic}
 #fm-site .enter{display:inline-block;padding:12px 22px;background:linear-gradient(110deg,var(--deep),var(--red));border:1px solid var(--gold);color:var(--paper);text-decoration:none;letter-spacing:.08em;box-shadow:0 0 18px #a42b2855;transition:transform .2s,box-shadow .2s;cursor:pointer}
 #fm-site .enter:hover,#fm-site .enter:focus{transform:translateY(-2px);box-shadow:0 0 26px #d8ae61a0}
 #fm-site .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px clamp(14px,3vw,28px);background:linear-gradient(90deg,#151314,#251517 50%,#151314);border-bottom:1px solid #7d5b2d;position:sticky;top:0;z-index:5;box-shadow:0 4px 16px #0006}
@@ -42,7 +37,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .work:hover:after{transform:rotate(60deg);opacity:.55}
 #fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px;padding-right:28px}
 #fm-site .card p{margin:0;color:#eee6d8}
-#fm-site .work-img{width:100%;max-height:180px;object-fit:contain;object-position:center;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;background:#120f10;box-shadow:0 4px 12px #0006}
+#fm-site .work-img{width:100%;height:185px;object-fit:contain;object-position:center;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;background:#120f10;box-shadow:0 4px 12px #0006}
 #fm-site .carousel{position:relative;max-width:195px;width:100%;margin:12px auto 0;border:1px solid #7d5b2d;border-radius:6px;overflow:hidden;background:#120f10;box-shadow:0 4px 14px #0007}
 #fm-site .carousel-track{display:flex;transition:transform .35s ease;width:100%}
 #fm-site .carousel-slide{min-width:100%;height:225px;display:flex;align-items:center;justify-content:center;background:#120f10}
@@ -74,7 +69,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 @keyframes flash{from{opacity:.75}to{opacity:0}}
 #fm-site .watch-badge{animation:spinWatch 28s linear infinite}
 @keyframes spinWatch{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}#fm-site .carousel{max-width:175px}#fm-site .carousel-slide{height:200px}}
+@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}#fm-site .work-img{height:165px}#fm-site .carousel{max-width:175px}#fm-site .carousel-slide{height:200px}}
 @media(prefers-reduced-motion:reduce){#fm-site *,#fm-site *:before,#fm-site *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 
@@ -174,38 +169,74 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 
   var subjects = [
     {id:"linguagens",name:"Linguagens",units:[
-      {name:"1ª Unidade",works:[["Conceito de Will","Esse trabalho me ensinou a ter mais precisão comunicativa. Entender o will me fez perceber como pequenos auxiliares mudam completamente a intenção do que dizemos, permitindo que eu me expresse em inglês com mais naturalidade e clareza."],["Lazer Ativo","Nesse trabalho, fizemos um circuito de bicicleta. Aprendi que o lazer ativo é uma ferramenta poderosa para cuidar do corpo e da mente e interagir com o mundo ao redor de forma mais saudável e consciente."]]},
-      {name:"2ª Unidade",works:[["Resumo das páginas sobre Práticas Corporais","Produzi um resumo sobre práticas corporais, destacando sua importância para a expressão, o autoconhecimento e a convivência social. A atividade ampliou minha compreensão sobre o papel do corpo na comunicação e na cultura."],["Análise sintática","Resolvi exercícios de gramática e análise sintática, identificando funções gramaticais e classificando orações. A atividade contribuiu para ampliar meu conhecimento da língua portuguesa e demonstrar meu desenvolvimento nessa área."]]},
+      {name:"1ª Unidade",works:[
+        ["Conceito de Will","Esse trabalho me ensinou a ter mais precisão comunicativa. Entender o will me fez perceber como pequenos auxiliares mudam completamente a intenção do que dizemos, permitindo que eu me expresse em inglês com mais naturalidade e clareza.","Captura%20de%20tela%202026-11-24%20194143.png"],
+        ["Lazer Ativo","Nesse trabalho, fizemos um circuito de bicicleta. Aprendi que o lazer ativo é uma ferramenta poderosa para cuidar do corpo e da mente e interagir com o mundo ao redor de forma mais saudável e consciente.","Captura%20de%20tela%202026-11-24%20194321.png"]
+      ]},
+      {name:"2ª Unidade",works:[
+        ["Resumo das páginas sobre Práticas Corporais","Produzi um resumo sobre práticas corporais, destacando sua importância para a expressão, o autoconhecimento e a convivência social. A atividade ampliou minha compreensão sobre o papel do corpo na comunicação e na cultura.","Captura%20de%20tela%202026-11-24%20194425.png"],
+        ["Análise sintática","Resolvi exercícios de gramática e análise sintática, identificando funções gramaticais e classificando orações. A atividade contribuiu para ampliar meu conhecimento da língua portuguesa e demonstrar meu desenvolvimento nessa área.","Captura%20de%20tela%202026-11-24%20194538.png"]
+      ]},
       {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]},
     {id:"matematica",name:"Matemática",units:[
-      {name:"1ª Unidade",works:[["Anotações: logaritmos","Fiz anotações da primeira aula sobre logaritmos e resolvi exercícios relacionados ao conteúdo. Isso me ajudou a compreender os conceitos básicos e as propriedades dos logaritmos, servindo como base para os estudos posteriores do tema."],["Logaritmo no Kahoot","Participei de um Kahoot sobre funções logarítmicas e exponenciais, respondendo questões de forma dinâmica e interativa. A atividade ajudou a revisar os conteúdos estudados e a identificar pontos que eu precisava reforçar."]]},
-      {name:"2ª Unidade",works:[["Questões do livro","Resolvi exercícios do livro envolvendo juros simples e compostos, aplicando fórmulas e realizando cálculos financeiros. A atividade contribuiu para o desenvolvimento do raciocínio matemático e para a compreensão de situações do dia a dia."],["Titan PC","Participei da criação da empresa fictícia TitanPC para uma proposta inspirada em programas de investimento, como o Shark Tank. Embora não tenha havido apresentação, a atividade contribuiu para o trabalho em equipe, a organização das ideias e a produção dos slides."]]},
-      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."]]},
+      {name:"1ª Unidade",works:[
+        ["Anotações: logaritmos","Fiz anotações da primeira aula sobre logaritmos e resolvi exercícios relacionados ao conteúdo. Isso me ajudou a compreender os conceitos básicos e as propriedades dos logaritmos, servindo como base para os estudos posteriores do tema.","Captura%20de%20tela%202026-11-24%20195637.png"],
+        ["Logaritmo no Kahoot","Participei de um Kahoot sobre funções logarítmicas e exponenciais, respondendo questões de forma dinâmica e interativa. A atividade ajudou a revisar os conteúdos estudados e a identificar pontos que eu precisava reforçar.","Captura%20de%20tela%202026-11-24%20195648.png"]
+      ]},
+      {name:"2ª Unidade",works:[
+        ["Questões do livro","Resolvi exercícios do livro envolvendo juros simples e compostos, aplicando fórmulas e realizando cálculos financeiros. A atividade contribuiu para o desenvolvimento do raciocínio matemático e para a compreensão de situações do dia a dia.","Captura%20de%20tela%202026-11-24%20195706.png"],
+        ["Titan PC","Participei da criação da empresa fictícia TitanPC para uma proposta inspirada em programas de investimento, como o Shark Tank. Embora não tenha havido apresentação, a atividade contribuiu para o trabalho em equipe, a organização das ideias e a produção dos slides.","Captura%20de%20tela%202026-11-24%20195720.png"]
+      ]},
+      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]},
     {id:"natureza",name:"Ciências da Natureza",units:[
-      {name:"1ª Unidade",works:[["Composição dos Alimentos","Neste trabalho, cada integrante escolheu um alimento para apresentar sua tabela nutricional. Aprendi que, mesmo sendo bom, um alimento pode ter malefícios."],["Transmissão Térmica","Neste mapa mental, coloquei os principais conceitos sobre transmissão térmica. Isso me ajudou nos estudos para o simulado e o PASSE."]]},
-      {name:"2ª Unidade",works:[["OBAFOG","Esse projeto foi muito importante, pois nele aprendemos vários assuntos, não só na teoria, mas principalmente na prática."],["Contração Muscular","Nesse trabalho sobre contração muscular, falei sobre a composição química dos músculos. Isso me ajudou a aprender com mais facilidade e também me ajudou no simulado."]]},
-      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."]]},
+      {name:"1ª Unidade",works:[
+        ["Composição dos Alimentos","Neste trabalho, cada integrante escolheu um alimento para apresentar sua tabela nutricional. Aprendi que, mesmo sendo bom, um alimento pode ter malefícios.","Captura%20de%20tela%202026-11-24%20195753.png"],
+        ["Transmissão Térmica","Neste mapa mental, coloquei os principais conceitos sobre transmissão térmica. Isso me ajudou nos estudos para o simulado e o PASSE.","Captura%20de%20tela%202026-11-24%20195803.png"]
+      ]},
+      {name:"2ª Unidade",works:[
+        ["OBAFOG","Esse projeto foi muito importante, pois nele aprendemos vários assuntos, não só na teoria, mas principalmente na prática.","Captura%20de%20tela%202026-11-24%20195823.png"],
+        ["Contração Muscular","Nesse trabalho sobre contração muscular, falei sobre a composição química dos músculos. Isso me ajudou a aprender com mais facilidade e também me ajudou no simulado.","Captura%20de%20tela%202026-11-24%20195835.png"]
+      ]},
+      {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]},
     {id:"humanas",name:"Ciências Humanas",units:[
-      {name:"1ª Unidade",works:[["Modernismo","Elaborei um mapa mental sobre o Modernismo, organizando suas fases, características e principais autores. Essa atividade facilitou a revisão do conteúdo e me ajudou a visualizar melhor as informações estudadas."],["Constituição de 1824","Desenvolvemos um projeto sobre a Constituição de 1824, com pesquisa, apresentações e encenações. Nosso grupo apresentou o tema para outras turmas, o que ajudou a aprofundar o entendimento sobre esse período da história do Brasil e a desenvolver comunicação e trabalho em equipe."]]},
-      {name:"2ª Unidade",works:[["Miscigenação do Brasil","Neste trabalho, fizemos uma peça mostrando como funcionava o tráfico de escravizados para o Brasil. Foi um trabalho que nos mostrou o que os negros sofriam antigamente."],["Questões SSA/ENEM","Resolvemos questões de vestibulares, como ENEM e outros processos seletivos, com o auxílio do professor. Também discutimos por que cada alternativa estava correta ou incorreta, o que contribuiu para melhorar minha interpretação e preparação para esse tipo de prova."]]},
+      {name:"1ª Unidade",works:[
+        ["Modernismo","Elaborei um mapa mental sobre o Modernismo, organizando suas fases, características e principais autores. Essa atividade facilitou a revisão do conteúdo e me ajudou a visualizar melhor as informações estudadas.","Captura%20de%20tela%202026-11-24%20195857.png"],
+        ["Constituição de 1824","Desenvolvemos um projeto sobre a Constituição de 1824, com pesquisa, apresentações e encenações. Nosso grupo apresentou o tema para outras turmas, o que ajudou a aprofundar o entendimento sobre esse período da história do Brasil e a desenvolver comunicação e trabalho em equipe.","Captura%20de%20tela%202026-11-24%20195911.png"]
+      ]},
+      {name:"2ª Unidade",works:[
+        ["Miscigenação do Brasil","Neste trabalho, fizemos uma peça mostrando como funcionava o tráfico de escravizados para o Brasil. Foi um trabalho que nos mostrou o que os negros sofriam antigamente.","Captura%20de%20tela%202026-11-24%20195929.png"],
+        ["Questões SSA/ENEM","Resolvemos questões de vestibulares, como ENEM e outros processos seletivos, com o auxílio do professor. Também discutimos por que cada alternativa estava correta ou incorreta, o que contribuiu para melhorar minha interpretação e preparação para esse tipo de prova.","Captura%20de%20tela%202026-11-24%20195940.png"]
+      ]},
       {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]},
     {id:"projeto",name:"Projeto de Vida",units:[
-      {name:"1ª Unidade",works:[["Mapa dos sonhos","Participei da construção de um mapa mental sobre sonhos e objetivos para o futuro. O trabalho permitiu refletir sobre minhas metas pessoais e profissionais, além de incentivar o planejamento para alcançá-las."],["Juventude em cada estação","Relacionamos as diferentes fases da juventude às estações do ano, explorando características, desafios e experiências de cada momento. O trabalho contribuiu para a reflexão sobre o desenvolvimento dos jovens e suas vivências ao longo da vida."]]},
-      {name:"2ª Unidade",works:[["Conceito de autocontrole","Estudei o conceito de autocontrole e sua importância para a tomada de decisões. O conteúdo contribuiu para meu desenvolvimento pessoal e para uma melhor compreensão das próprias atitudes e emoções."],["Bate-papo: legado","Neste bate-papo, participei de uma conversa sobre o conceito de legado e a importância das ações que deixamos para outras pessoas. A atividade incentivou a reflexão sobre valores, escolhas e responsabilidade no dia a dia."]]},
+      {name:"1ª Unidade",works:[
+        ["Mapa dos sonhos","Participei da construção de um mapa mental sobre sonhos e objetivos para o futuro. O trabalho permitiu refletir sobre minhas metas pessoais e profissionais, além de incentivar o planejamento para alcançá-las.","Captura%20de%20tela%202026-11-24%20200008.png"],
+        ["Juventude em cada estação","Relacionamos as diferentes fases da juventude às estações do ano, explorando características, desafios e experiências de cada momento. O trabalho contribuiu para a reflexão sobre o desenvolvimento dos jovens e suas vivências ao longo da vida.","Captura%20de%20tela%202026-11-24%20200027.png"]
+      ]},
+      {name:"2ª Unidade",works:[
+        ["Conceito de autocontrole","Estudei o conceito de autocontrole e sua importância para a tomada de decisões. O conteúdo contribuiu para meu desenvolvimento pessoal e para uma melhor compreensão das próprias atitudes e emoções.","Captura%20de%20tela%202026-11-24%20200048.png"],
+        ["Bate-papo: legado","Neste bate-papo, participei de uma conversa sobre o conceito de legado e a importância das ações que deixamos para outras pessoas. A atividade incentivou a reflexão sobre valores, escolhas e responsabilidade no dia a dia.","Captura%20de%20tela%202026-11-24%20200101.png"]
+      ]},
       {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]},
     {id:"senai",name:"SENAI · Automação Industrial",units:[
-      {name:"1ª Unidade",works:[["Circuito Elétrico","Nesta atividade, fiz um circuito elétrico no computador, o que me ajudou a aprender na teoria como os circuitos elétricos funcionam."],["Atividade no Laboratório","Nesta atividade prática, aprendemos a usar multímetro, protoboard e fonte de alimentação para ligar um LED no circuito."]]},
-      {name:"2ª Unidade",works:[["Thinker Cad","Nessa aula, aprendi a modelar em três dimensões, combinando e modificando formas geométricas para construir objetos complexos e entender conceitos de escala e proporção."],["Desenho Técnico","Nessa atividade, desenvolvi a capacidade de mentalizar um objeto em 3D e representá-lo em uma tela 2D através das vistas ortográficas (frontal, superior e lateral), cortes e seções."]]},
+      {name:"1ª Unidade",works:[
+        ["Circuito Elétrico","Nesta atividade, fiz um circuito elétrico no computador, o que me ajudou a aprender na teoria como os circuitos elétricos funcionam.","Captura%20de%20tela%202026-11-24%20200135.png"],
+        ["Atividade no Laboratório","Nesta atividade prática, aprendemos a usar multímetro, protoboard e fonte de alimentação para ligar um LED no circuito.","Captura%20de%20tela%202026-11-24%20200148.png"]
+      ]},
+      {name:"2ª Unidade",works:[
+        ["Thinker Cad","Nessa aula, aprendi a modelar em três dimensões, combinando e modificando formas geométricas para construir objetos complexos e entender conceitos de escala e proporção.","Captura%20de%20tela%202026-11-24%20200210.png"],
+        ["Desenho Técnico","Nessa atividade, desenvolvi a capacidade de mentalizar um objeto em 3D e representá-lo em uma tela 2D através das vistas ortográficas (frontal, superior e lateral), cortes e seções.","Captura%20de%20tela%202026-11-24%20200229.png"]
+      ]},
       {name:"3ª Unidade",works:[["Atividade 1 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 3ª unidade."],["Atividade 2 · 3ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]},
       {name:"4ª Unidade",works:[["Atividade 1 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."],["Atividade 2 · 4ª Unidade","Adicione aqui o título e o resumo do aprendizado desta atividade da 4ª unidade."]]}
     ]}
