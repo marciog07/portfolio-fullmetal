@@ -37,7 +37,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .work:hover:after{transform:rotate(60deg);opacity:.55}
 #fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px;padding-right:28px}
 #fm-site .card p{margin:0;color:#eee6d8}
-#fm-site .work-img{width:100%;height:185px;object-fit:contain;object-position:center;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;background:#120f10;box-shadow:0 4px 12px #0006}
+#fm-site .work-img{display:block;width:fit-content;max-width:100%;height:auto;max-height:220px;margin:12px auto 0;border:1px solid #7d5b2d;border-radius:4px;background:#120f10;box-shadow:0 4px 12px #0006}
 #fm-site .carousel{position:relative;max-width:195px;width:100%;margin:12px auto 0;border:1px solid #7d5b2d;border-radius:6px;overflow:hidden;background:#120f10;box-shadow:0 4px 14px #0007}
 #fm-site .carousel-track{display:flex;transition:transform .35s ease;width:100%}
 #fm-site .carousel-slide{min-width:100%;height:225px;display:flex;align-items:center;justify-content:center;background:#120f10}
@@ -69,7 +69,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 @keyframes flash{from{opacity:.75}to{opacity:0}}
 #fm-site .watch-badge{animation:spinWatch 28s linear infinite}
 @keyframes spinWatch{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}#fm-site .work-img{height:165px}#fm-site .carousel{max-width:175px}#fm-site .carousel-slide{height:200px}}
+@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}#fm-site .work-img{max-height:190px}#fm-site .carousel{max-width:175px}#fm-site .carousel-slide{height:200px}}
 @media(prefers-reduced-motion:reduce){#fm-site *,#fm-site *:before,#fm-site *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 
