@@ -42,17 +42,17 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .work:hover:after{transform:rotate(60deg);opacity:.55}
 #fm-site .card h3{color:#f1dfb5;font-size:20px;line-height:1.25;margin:0 0 9px;padding-right:28px}
 #fm-site .card p{margin:0;color:#eee6d8}
-#fm-site .work-img{width:100%;max-height:180px;object-fit:cover;object-position:50% 15%;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;box-shadow:0 4px 12px #0006}
-#fm-site .carousel{position:relative;margin-top:12px;border:1px solid #7d5b2d;border-radius:6px;overflow:hidden;background:#120f10;box-shadow:0 4px 14px #0007}
+#fm-site .work-img{width:100%;max-height:180px;object-fit:contain;object-position:center;margin-top:12px;border:1px solid #7d5b2d;border-radius:4px;display:block;background:#120f10;box-shadow:0 4px 12px #0006}
+#fm-site .carousel{position:relative;max-width:260px;width:100%;margin:12px auto 0;border:1px solid #7d5b2d;border-radius:6px;overflow:hidden;background:#120f10;box-shadow:0 4px 14px #0007}
 #fm-site .carousel-track{display:flex;transition:transform .35s ease;width:100%}
-#fm-site .carousel-slide{min-width:100%;height:175px;display:flex;align-items:center;justify-content:center;background:#120f10}
-#fm-site .carousel-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
-#fm-site .carousel-slide img.fit-contain{object-fit:contain;object-position:center;background:#120f10}
-#fm-site .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:#171314cc;border:1px solid var(--gold);color:var(--gold);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-size:17px;line-height:1;transition:background .2s,transform .2s;z-index:2}
+#fm-site .carousel-slide{min-width:100%;height:190px;display:flex;align-items:center;justify-content:center;background:#120f10}
+#fm-site .carousel-slide img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+#fm-site .carousel-slide img.fit-cover{object-fit:cover;object-position:50% 15%}
+#fm-site .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:#171314cc;border:1px solid var(--gold);color:var(--gold);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-size:16px;line-height:1;transition:background .2s,transform .2s;z-index:2}
 #fm-site .carousel-btn:hover{background:var(--red);color:var(--paper)}
-#fm-site .carousel-prev{left:8px}
-#fm-site .carousel-next{right:8px}
-#fm-site .carousel-dots{display:flex;justify-content:center;gap:6px;padding:7px;background:#181314;border-top:1px solid #492c2d}
+#fm-site .carousel-prev{left:6px}
+#fm-site .carousel-next{right:6px}
+#fm-site .carousel-dots{display:flex;justify-content:center;gap:6px;padding:6px;background:#181314;border-top:1px solid #492c2d}
 #fm-site .carousel-dot{width:7px;height:7px;padding:0;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;transition:background .2s,transform .2s}
 #fm-site .carousel-dot.active{background:var(--gold);transform:scale(1.2)}
 #fm-site .unit-link{display:flex;width:100%;text-align:left;align-items:center;justify-content:space-between;min-height:92px;transition:transform .18s,border-color .18s,box-shadow .18s;cursor:pointer}
@@ -74,7 +74,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 @keyframes flash{from{opacity:.75}to{opacity:0}}
 #fm-site .watch-badge{animation:spinWatch 28s linear infinite}
 @keyframes spinWatch{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}#fm-site .carousel-slide{height:155px}}
+@media(max-width:620px){#fm-site .cards{grid-template-columns:1fr}#fm-site .topbar{align-items:center}#fm-site .top-ornament{display:none}#fm-site .brand{font-size:16px}#fm-site .intro{min-height:100dvh}#fm-site .carousel{max-width:230px}#fm-site .carousel-slide{height:170px}}
 @media(prefers-reduced-motion:reduce){#fm-site *,#fm-site *:before,#fm-site *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 
@@ -115,16 +115,16 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   var cardSigilHtml = '<svg class="card-sigil" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#e2c77f" stroke-width="1.2"/><polygon points="16,4 26,22 6,22" fill="none" stroke="#e2c77f" stroke-width="1.1"/><polygon points="16,28 6,10 26,10" fill="none" stroke="#e2c77f" stroke-width="1.1"/></svg>';
 
   var quemSouFotos = [
-    {src: "WhatsApp%20Image%202026-11-24%20at%2001.15.39.jpeg", alt: "Foto 1 de Quem sou", pos: "50% 10%", fit: "cover"},
-    {src: "13b847d5-494e-43af-bd57-57d25fa5aa89.jpeg", alt: "Foto 2 de Quem sou", pos: "50% 12%", fit: "cover"},
-    {src: "27b98ad1-6619-442d-a02c-b466cab5f3f0.jpeg", alt: "Foto 3 de Quem sou", pos: "50% 12%", fit: "cover"},
-    {src: "f317e6c0-2b0f-46a8-a18f-c9c7bdda3faa.jpeg", alt: "Foto 4 de Quem sou", pos: "50% 12%", fit: "cover"}
+    {src: "WhatsApp%20Image%202026-11-24%20at%2001.15.39.jpeg", alt: "Foto 1 de Quem sou"},
+    {src: "13b847d5-494e-43af-bd57-57d25fa5aa89.jpeg", alt: "Foto 2 de Quem sou"},
+    {src: "27b98ad1-6619-442d-a02c-b466cab5f3f0.jpeg", alt: "Foto 3 de Quem sou"},
+    {src: "f317e6c0-2b0f-46a8-a18f-c9c7bdda3faa.jpeg", alt: "Foto 4 de Quem sou"}
   ];
 
   var conquistasFotos = [
-    {src: "WhatsApp%20Image%202026-11-24%20at%2000.45.26%20%281%29.jpeg", alt: "Foto 1 de Conquistas", pos: "50% 10%", fit: "cover"},
-    {src: "WhatsApp%20Image%202026-11-24%20at%2000.45.26%20%282%29.jpeg", alt: "Foto 2 de Conquistas", pos: "50% 12%", fit: "cover"},
-    {src: "WhatsApp%20Image%202026-11-24%20at%2000.45.26.jpeg", alt: "Foto 3 de Conquistas", pos: "50% 12%", fit: "cover"}
+    {src: "WhatsApp%20Image%202026-11-24%20at%2000.45.26%20%281%29.jpeg", alt: "Foto 1 de Conquistas"},
+    {src: "WhatsApp%20Image%202026-11-24%20at%2000.45.26%20%282%29.jpeg", alt: "Foto 2 de Conquistas"},
+    {src: "WhatsApp%20Image%202026-11-24%20at%2000.45.26.jpeg", alt: "Foto 3 de Conquistas"}
   ];
 
   var carouselState = {
@@ -141,10 +141,8 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
     var dots = "";
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
-      var isContain = item.fit === "contain";
-      var cls = isContain ? ' class="fit-contain"' : '';
-      var styleAttr = isContain ? '' : ' style="object-position:' + (item.pos || "50% 12%") + '"';
-      slides += '<div class="carousel-slide"><img src="' + item.src + '" alt="' + item.alt + '"' + cls + styleAttr + ' loading="lazy"></div>';
+      var cls = item.fit === "cover" ? ' class="fit-cover"' : '';
+      slides += '<div class="carousel-slide"><img src="' + item.src + '" alt="' + item.alt + '"' + cls + ' loading="lazy"></div>';
       dots += '<button type="button" class="carousel-dot' + (i === activeIdx ? " active" : "") + '" data-c-id="' + id + '" data-c-idx="' + i + '" aria-label="Ir para foto ' + (i + 1) + '"></button>';
     }
 
