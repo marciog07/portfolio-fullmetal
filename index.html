@@ -24,6 +24,8 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
 #fm-site .nav-btn{background:linear-gradient(180deg,#281c1d,#1b1415);border:1px solid #694042;color:var(--paper);padding:6px 11px;font-size:13px;cursor:pointer;transition:transform .18s,background .2s,border-color .2s,color .2s,box-shadow .2s}
 #fm-site .nav-btn:hover,#fm-site .nav-btn.active{transform:translateY(-1px);background:linear-gradient(180deg,var(--red),var(--deep));border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px #e2c77f28}
 #fm-site .view{min-height:calc(100dvh - 122px);padding:clamp(18px,4vw,38px);background:radial-gradient(circle at 85% 15%,#641a1c28,transparent 45%),radial-gradient(circle at 12% 85%,#e2c77f0d,transparent 40%);animation:appear .35s ease-out}
+#fm-site .view.gif-bg{background:linear-gradient(180deg,rgba(16,16,18,.74),rgba(20,14,16,.8)),url("download.gif") center/cover fixed no-repeat}
+#fm-site .view.works-bg .cards{padding:14px;border-radius:8px;background:linear-gradient(180deg,rgba(16,16,18,.74),rgba(20,14,16,.8)),url("download.gif") center/cover fixed no-repeat;border:1px solid #59353680}
 #fm-site .view-head{border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:0 0 22px;position:relative}
 #fm-site .view-head:before{content:"";position:absolute;left:-8px;top:50%;width:10px;height:10px;transform:translateY(-50%) rotate(45deg);background:var(--red);border:1px solid var(--gold)}
 #fm-site h2{font-size:clamp(27px,4vw,40px);line-height:1.15;color:var(--gold);margin:0 0 7px}
@@ -273,7 +275,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
   }
 
   function renderAbout() {
-    return '<main class="view"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card">' + cardSigilHtml + '<h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p>' + renderCarousel("quem-sou", quemSouFotos) + '</article><article class="card">' + cardSigilHtml + '<h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card">' + cardSigilHtml + '<h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p>' + renderCarousel("conquistas", conquistasFotos) + '</article><article class="card">' + cardSigilHtml + '<h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px">' + cardSigilHtml + '<h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
+    return '<main class="view gif-bg"><div class="view-head"><div class="eyebrow">Apresentação</div><h2>Sobre mim</h2><p class="subhead">Márcio Gabriel · 16 anos · 2º ano do Ensino Médio · Automação Industrial</p></div><div class="cards"><article class="card">' + cardSigilHtml + '<h3>Quem sou</h3><p>Gosto de passar meu tempo vendo animes, jogando futebol e conversando com meus amigos.</p>' + renderCarousel("quem-sou", quemSouFotos) + '</article><article class="card">' + cardSigilHtml + '<h3>Minhas qualidades</h3><p>Empatia · Persistência · Honestidade</p></article><article class="card">' + cardSigilHtml + '<h3>Conquistas</h3><p>Copa Mata Sul Sub-16 · Vice-campeonato da Copa Mata Sul Sub-17 · Aprovado no SESI</p>' + renderCarousel("conquistas", conquistasFotos) + '</article><article class="card">' + cardSigilHtml + '<h3>Metas</h3><p>Ganhar o Pernambucano Fut-7 · Passar de ano · Tirar uma boa nota no SSA 2</p></article></div><div class="quote">“Uma lição sem dor não tem significado.” — Edward Elric</div><article class="card" style="margin-top:14px">' + cardSigilHtml + '<h3>Por que escolhi Fullmetal Alchemist</h3><p>Escolhi o tema de Fullmetal Alchemist porque a jornada dos irmãos Elric me ensinou que cometer erros e enfrentar momentos difíceis faz parte do amadurecimento. Mais do que os tombos que levamos, o que realmente importa é a nossa capacidade de levantar, aprender com as falhas e continuar caminhando com as próprias pernas, transformando dificuldades em força.</p></article>' + btn("inicio", "back", "Voltar à abertura") + '</main>';
   }
 
   function renderSubject(s) {
@@ -281,7 +283,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
     for (var i = 0; i < s.units.length; i++) {
       cards += btn(s.id + "-" + (i + 1), "card unit-link", cardSigilHtml + '<span><h3>' + s.units[i].name + '</h3><span class="subhead">Ver atividades desta unidade</span></span><span>›</span>');
     }
-    return '<main class="view"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + s.name + '</div><div class="view-head"><div class="eyebrow">Área de estudo</div><h2>' + s.name + '</h2><p class="subhead">Escolha a unidade para ver os trabalhos e aprendizados.</p></div><div class="cards">' + cards + '</div>' + btn("inicio", "back", "Voltar ao início") + '</main>';
+    return '<main class="view gif-bg"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + s.name + '</div><div class="view-head"><div class="eyebrow">Área de estudo</div><h2>' + s.name + '</h2><p class="subhead">Escolha a unidade para ver os trabalhos e aprendizados.</p></div><div class="cards">' + cards + '</div>' + btn("inicio", "back", "Voltar ao início") + '</main>';
   }
 
   function renderUnit(s, idx) {
@@ -294,7 +296,7 @@ html,body{margin:0;padding:0;min-height:100%;background:#101012}
         : '';
       cards += '<article class="card work">' + cardSigilHtml + '<h3>' + u.works[i][0] + '</h3><p>' + u.works[i][1] + '</p>' + imgHtml + '</article>';
     }
-    return '<main class="view"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + btn(s.id, "", s.name) + ' / ' + u.name + '</div><div class="view-head"><div class="eyebrow">' + s.name + '</div><h2>' + u.name + '</h2><p class="subhead">Trabalhos e aprendizados</p></div><div class="cards">' + cards + '</div>' + btn(s.id, "back", "← Voltar para " + s.name) + '</main>';
+    return '<main class="view works-bg"><div class="crumb">' + btn("inicio", "", "Início") + ' / ' + btn(s.id, "", s.name) + ' / ' + u.name + '</div><div class="view-head"><div class="eyebrow">' + s.name + '</div><h2>' + u.name + '</h2><p class="subhead">Trabalhos e aprendizados</p></div><div class="cards">' + cards + '</div>' + btn(s.id, "back", "← Voltar para " + s.name) + '</main>';
   }
 
   function render() {
